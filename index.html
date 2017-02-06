@@ -9,6 +9,18 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100" rel="stylesheet">
     <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=zocial">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <link src="js/jquery-3.1.1.slim.min.js" rel="stylesheet">
+    <script type="text/JavaScript">
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+var x = document.getElementById("myTopnav");
+if (x.className === "topnav") {
+    x.className += " responsive";
+} else {
+    x.className = "topnav";
+}
+}
+    </script>
 </head>
 
 <body>
@@ -17,12 +29,19 @@
                 <img id="logo" src="https://cdn.worldvectorlogo.com/logos/udacity.svg" alt="Udacity logo" >
             </div>
             <div class="info">
-            <!-- TODO: align right -->
                 <h1 id="name">Jane Doette</h1>
                 <h3 id="job-title"> Front-end Ninja </h3>
             </div>
-
     </header>
+    <ul class="topnav" id="myTopnav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li class="icon"> <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+</li>
+
+    </ul>
         <section class="container">
             <img class="photo-main" src="img/photo-main-960w.jpg"
             sizes="(min-width: 100px) 100vw"
@@ -31,8 +50,7 @@
         <main class="container">
           <div class="container">
             <h2> Featured Work </h2>
-            <br/>
-            <p>Enjoy some of photos that I have taken</p>
+            <p>Enjoy some photos I have taken</p>
           </div>
             <article class="flex-item">
                 <img class="project-photo" src="img/photo-400w.jpg" alt="A forest path"
