@@ -1,3 +1,14 @@
+/*Hi Susan,
+Thanks for meeting with me. There are a few things I haven't figured out here.
+
+Why does my script for the hamburger menu from the head show up on the page?
+I don't understand at all how this hamburger menu works. Could you explain?
+Can I add a transition so that the hamburger menu slowly comes into view?
+Can I make the hamburger menu disappear when I click outside of it?
+How do I eliminate the lines at the bottom of the social media links icons?
+
+Thanks again! -Michael*/
+
 * {
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
@@ -25,7 +36,7 @@ h1, h3, p, a {
     display: flex;
     width: 100vw;
     min-width: 320px;
-    max-width: 1201px
+    max-width: 1280px
 }
 
 
@@ -35,11 +46,11 @@ h1, h3, p, a {
     position: relative;
     width: 100vw;
     min-width: 320px;
-    max-width: 1200px;
+    max-width: 1280px;
     min-height: 75px;
     border-bottom: 5px solid #7d97ad;
     padding-bottom: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
 .logo {
@@ -85,13 +96,81 @@ h1, h3, p, a {
     padding-right: 0;
 }
 
+/*hamburger menu*/
+ul.topnav {
+    display: block;
+    list-style-type: none;
+    margin: 0 0 5px 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
+    z-index: 10;
+}
+
+        /* Float the list items side by side */
+ul.topnav li {float: left;}
+
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.topnav li a:hover {background-color: #555;}
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+ul.topnav li.icon {display: none;}
+
+/*attempt to fade list in and out*/
+ul.topnav li a:active {
+  transition: 0.5s;
+}
+
+/* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {
+    display: none;
+
+  }
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+
 /*photos*/
 
 .photo-main {
     width: 100%;
     min-width: 320px;
     min-height: 213px;
-    max-width: 1200px;
+    max-width: 1280px;
     max-height: 853px;
 }
 
@@ -128,6 +207,7 @@ article>a {
 
 p {
     margin: 0 0 10px 0;
+    width: 100%;
 
 }
 
@@ -286,21 +366,26 @@ div#social a:last-of-type {
     }
 }
 
-@media screen and (min-width: 1201px) {
+@media screen and (min-width: 1280px) {
+  ul.topnav {
+    width: 1280px;
+    margin-left: calc((100% - 1280px) / 2);
+    margin-right: calc((100% - 1280px) / 2);
+  }
   .header {
-      width: 1201px;
-      margin-left: calc((100% - 1201px) / 2);
-      margin-right: calc((100% - 1201px) / 2);
+      width: 1280px;
+      margin-left: calc((100% - 1280px) / 2);
+      margin-right: calc((100% - 1280px) / 2);
     }
 
   .container {
-      width: 1201px;
-      margin-left: calc((100% - 1201px) / 2);
-      margin-right: calc((100% - 1201px) / 2);
+      width: 1280px;
+      margin-left: calc((100% - 1280px) / 2);
+      margin-right: calc((100% - 1280px) / 2);
     }
   .footer {
-      width: 1201px;
-      margin-left: calc((100% - 1201px) / 2);
-      margin-right: calc((100% - 1201px) / 2);
+      width: 1280px;
+      margin-left: calc((100% - 1280px) / 2);
+      margin-right: calc((100% - 1280px) / 2);
   }
 }
