@@ -1,2 +1,3 @@
 # mock-portfolio
-Portfolio project for Udacity assignment
+## Summary
+Portfolio project for Udacity assignment, built from scratch to mimic a given PDF.
